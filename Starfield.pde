@@ -1,5 +1,6 @@
 Particle [] bobs;
 OddballParticle sue;
+boolean start = true;
 void setup()
 {
   size(500,500);
