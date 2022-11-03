@@ -1,6 +1,6 @@
 Particle [] bobs;
 OddballParticle sue;
-public void setup()
+void setup()
 {
   size(500,500);
   noStroke();
@@ -13,7 +13,7 @@ public void setup()
     bobs[i] = new Particle();
   }
 }
-public void draw()
+void draw()
 {
   background(0);
   for(int i =0; i < bobs.length; i++) {
