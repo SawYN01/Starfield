@@ -1,5 +1,4 @@
 Particle [] bobs;
-Particle bob;
 OddballParticle sue;
 boolean start = false;
 public void setup()
@@ -7,7 +6,6 @@ public void setup()
   size(500,500);
   noStroke();
   bobs = new Particle[2000];
-  bob = new Particle();
   sue = new OddballParticle();
   for(int i = 0; i < bobs.length; i++) { 
     bobs[i] = new OddballParticle();
@@ -27,10 +25,10 @@ public void draw()
 }
 class Particle
 {
-   protected double myAngle, mySpeed, myX, myY, mySize;
-   protected int myColor;
-   private boolean boundary;
-   public Particle() {
+   double myAngle, mySpeed, myX, myY, mySize;
+   int myColor;
+   boolean boundary;
+   Particle() {
      myX = myY = 250;
      myColor = color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
      myAngle = Math.random()*2*Math.PI;
@@ -38,13 +36,13 @@ class Particle
      boundary = false;
    }
    
-   public void move() {
+   void move() {
      if (boundary == false) {
        myY = myY+((Math.sin(myAngle))*mySpeed);
        myX = myX+((Math.cos(myAngle))*mySpeed);
      }
    }
-   public void boundary() {
+   void boundary() {
      if (myX > width || myY > height){
         boundary = true; 
         myX = myY = 250;
@@ -54,7 +52,7 @@ class Particle
      else 
        boundary = false;
    }
-   public void show() { 
+  void show() { 
      mySize = dist(250,250, (int)myX, (int)myY)/30;
      fill(myColor);
      ellipse((int)myX, (int)myY, (int)mySize,(int)mySize);
@@ -62,14 +60,14 @@ class Particle
 }
 class OddballParticle extends Particle //inherits from Particle
 {
-   public OddballParticle() {
+   OddballParticle() {
      myX = (int)(Math.random()*100)+150;
      myY = (int)(Math.random()*100)+150;
      myColor = color((int)(Math.random()*50)+196, (int)(Math.random()*50)+18, (int)(Math.random()*50)+18);
      myAngle = Math.random()*2*Math.PI;
      mySpeed = 1;
    }
-    public void show() { 
+   void show() { 
      fill(myColor);
      float rot = random(PI*2);
      translate((float)myX, (float)myY);
