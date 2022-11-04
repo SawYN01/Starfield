@@ -35,8 +35,8 @@ class Particle
    
    void move() {
      if (boundary == false) {
-       myY = myY+((Math.sin(myAngle))*mySpeed);
-       myX = myX+((Math.cos(myAngle))*mySpeed);
+       myY = myY+(Math.sin(myAngle)*mySpeed);
+       myX = myX+(Math.cos(myAngle)*mySpeed);
      }
    }
    void boundary() {
@@ -55,6 +55,7 @@ class Particle
      ellipse((float)myX, (float)myY, (float)mySize,(float)mySize);
   }
 }
+/*
 class OddballParticle extends Particle //inherits from Particle
 {
    OddballParticle() {
@@ -80,3 +81,4 @@ class OddballParticle extends Particle //inherits from Particle
      translate((float)(-myX), (float)(-myY));
    }
 }
+*/
