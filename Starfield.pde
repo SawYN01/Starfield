@@ -34,10 +34,10 @@ class Particle
    }
    
    void move() {
-     if (boundary == false) {
+     //if (boundary == false) {
        myY = myY+(Math.sin(myAngle)*mySpeed);
        myX = myX+(Math.cos(myAngle)*mySpeed);
-     }
+    // }
    }
    void boundary() {
      if (myX > width || myY > height){
