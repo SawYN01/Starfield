@@ -58,7 +58,7 @@ class Particle
      ellipse((int)myX, (int)myY, (int)mySize,(int)mySize);
   }
 }
-class OddballParticle extends Particle //inherits from Particle
+/*class OddballParticle extends Particle //inherits from Particle
 {
    OddballParticle() {
      myX = (int)(Math.random()*100)+150;
@@ -83,3 +83,4 @@ class OddballParticle extends Particle //inherits from Particle
      translate((float)(-myX), (float)(-myY));
    }
 }
+*/
