@@ -1,5 +1,5 @@
 Particle [] bobs = new Particle[2000];
-boolean start = true;
+//boolean start = true;
 void setup()
 {
   size(500,500);
@@ -11,6 +11,7 @@ void setup()
   for(int i = 20; i < bobs.length; i++) {
     bobs[i] = new Particle();
   }
+  frameRate(60);
 }
 void draw()
 {
@@ -34,10 +35,10 @@ class Particle
    }
    
    void move() {
-     //if (boundary == false) {
+     if (boundary == false) {
        myY = myY+(Math.sin(myAngle)*mySpeed);
        myX = myX+(Math.cos(myAngle)*mySpeed);
-    // }
+     }
    }
    void boundary() {
      if (myX > width || myY > height){
@@ -55,9 +56,10 @@ class Particle
      ellipse((float)myX, (float)myY, (float)mySize,(float)mySize);
   }
 }
-/*
-class OddballParticle extends Particle //inherits from Particle
-{
+
+class OddballParticle extends Particle 
+{  
+   super();
    OddballParticle() {
      myX = (int)(Math.random()*100)+150;
      myY = (int)(Math.random()*100)+150;
@@ -81,4 +83,4 @@ class OddballParticle extends Particle //inherits from Particle
      translate((float)(-myX), (float)(-myY));
    }
 }
-*/
+
