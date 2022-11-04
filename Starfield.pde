@@ -1,5 +1,5 @@
 Particle [] bobs = new Particle[2000];
-//boolean start = true;
+boolean start = true;
 void setup()
 {
   size(500,500);
@@ -11,7 +11,6 @@ void setup()
   for(int i = 20; i < bobs.length; i++) {
     bobs[i] = new Particle();
   }
-  frameRate(60);
 }
 void draw()
 {
@@ -53,13 +52,12 @@ class Particle
   void show() { 
      mySize = dist(250,250, (int)myX, (int)myY)/30;
      fill(myColor);
-     ellipse((float)myX, (float)myY, (float)mySize,(float)mySize);
+     ellipse((int)myX, (int)myY, (int)mySize,(int)mySize);
   }
 }
 
 class OddballParticle extends Particle 
 {  
-   super();
    OddballParticle() {
      myX = (int)(Math.random()*100)+150;
      myY = (int)(Math.random()*100)+150;
