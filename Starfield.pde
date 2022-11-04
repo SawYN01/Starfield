@@ -1,4 +1,4 @@
-Particle [] bobs = new Particle[1000];
+Particle [] bobs = new Particle[2000];
 boolean start = true;
 void setup()
 {
@@ -8,7 +8,7 @@ void setup()
   for(int i = 0; i < 20; i++) { 
     bobs[i] = new OddballParticle();
   }
-  for(int i = 10; i < bobs.length; i++) {
+  for(int i = 20; i < bobs.length; i++) {
     bobs[i] = new Particle();
   }
 }
