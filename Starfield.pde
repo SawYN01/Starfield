@@ -4,7 +4,7 @@ void setup()
 {
   size(500,500);
   noStroke();
-  background(0);
+  
   for(int i = 0; i < 20; i++) { 
     bobs[i] = new OddballParticle();
   }
@@ -14,6 +14,7 @@ void setup()
 }
 void draw()
 {
+  background(0);
   for(int i =0; i < bobs.length; i++) {
     bobs[i].move();
     bobs[i].show();
