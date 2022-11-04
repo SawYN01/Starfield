@@ -18,9 +18,9 @@ void draw()
 {
   background(0);
   for(int i =0; i < bobs.length; i++) {
+    bobs[i].boundary();
     bobs[i].move();
     bobs[i].show();
-    bobs[i].boundary();
   }
 }
 class Particle
