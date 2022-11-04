@@ -1,5 +1,5 @@
 Particle [] bobs = new Particle[2000];
-//boolean start = true;
+boolean start = true;
 void setup()
 {
   size(500,500);
@@ -29,7 +29,7 @@ class Particle
      myX = myY = 250;
      myColor = color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
      myAngle = Math.random()*2*Math.PI;
-     mySpeed = (Math.random()*3);
+     mySpeed = Math.random()*3;
      boundary = false;
    }
    
@@ -52,7 +52,7 @@ class Particle
   void show() { 
      mySize = dist(250,250, (int)myX, (int)myY)/30;
      fill(myColor);
-     ellipse((int)myX, (int)myY, (int)mySize,(int)mySize);
+     ellipse((float)myX, (float)myY, (float)mySize,(float)mySize);
   }
 }
 class OddballParticle extends Particle //inherits from Particle
