@@ -17,7 +17,7 @@ void draw()
   for(int i =0; i < bobs.length; i++) {
     bobs[i].move();
     bobs[i].show();
-    bobs[i].boundary();
+    bobs[i].edge();
   }
 }
 class Particle
@@ -39,7 +39,7 @@ class Particle
        myX = myX+(Math.cos(myAngle)*mySpeed);
      }
    }
-   void boundary() {
+   void edge() {
      if (myX > width || myY > height){
         boundary = true; 
         myX = myY = 250;
