@@ -1,13 +1,11 @@
-Particle [] bobs;
-OddballParticle sue;
-boolean start = true;
+Particle [] bobs = new Particle[2000];
+//boolean start = true;
 void setup()
 {
   size(500,500);
   noStroke();
-  bobs = new Particle[2000];
-  sue = new OddballParticle();
-  for(int i = 0; i < bobs.length; i++) { 
+  background(0);
+  for(int i = 0; i < 20; i++) { 
     bobs[i] = new OddballParticle();
   }
   for(int i = 20; i < bobs.length; i++) {
@@ -16,11 +14,10 @@ void setup()
 }
 void draw()
 {
-  background(0);
   for(int i =0; i < bobs.length; i++) {
-    bobs[i].boundary();
     bobs[i].move();
     bobs[i].show();
+    bobs[i].boundary();
   }
 }
 class Particle
@@ -44,7 +41,7 @@ class Particle
    }
    void boundary() {
      if (myX > width || myY > height){
-        boundary = true; 
+        //boundary = true; 
         myX = myY = 250;
         myAngle = Math.random()*2*Math.PI;
         mySpeed = (Math.random()*3);
